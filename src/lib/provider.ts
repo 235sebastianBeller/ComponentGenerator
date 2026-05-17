@@ -200,81 +200,58 @@ The component is now ready to use. You can see the preview on the right side of 
         return `import React, { useState } from 'react';
 
 const ContactForm = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [sent, setSent] = useState(false);
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
+  const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Handle form submission here
+    setSent(true);
   };
 
   return (
-    <div className="max-w-md mx-auto p-6 bg-white rounded-lg shadow-md">
-      <h2 className="text-2xl font-bold mb-6">Contact Us</h2>
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-            Name
-          </label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
+    <div className="relative bg-zinc-950 rounded-3xl p-8 w-full max-w-md shadow-2xl shadow-black/50 border border-white/10 overflow-hidden">
+      <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl pointer-events-none" />
+      <p className="text-xs font-bold uppercase tracking-widest text-emerald-400 mb-2">Get in touch</p>
+      <h2 className="text-3xl font-black text-white tracking-tight mb-1">Let's talk.</h2>
+      <p className="text-zinc-500 text-sm mb-8">Drop a message and I'll get back within 24 hours.</p>
+
+      {sent ? (
+        <div className="text-center py-8">
+          <div className="text-4xl mb-3">✓</div>
+          <p className="text-white font-bold text-lg">Message sent!</p>
+          <p className="text-zinc-500 text-sm mt-1">I'll be in touch soon.</p>
         </div>
-        
-        <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-            Email
-          </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-        </div>
-        
-        <div>
-          <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-            Message
-          </label>
-          <textarea
-            id="message"
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            required
-            rows={4}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-        </div>
-        
-        <button
-          type="submit"
-          className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition-colors"
-        >
-          Send Message
-        </button>
-      </form>
+      ) : (
+        <form onSubmit={handleSubmit} className="space-y-4">
+          {[
+            { id: 'name', label: 'Your name', type: 'text' },
+            { id: 'email', label: 'Email address', type: 'email' },
+          ].map(({ id, label, type }) => (
+            <div key={id}>
+              <label className="text-xs font-semibold uppercase tracking-widest text-zinc-500 block mb-1.5">{label}</label>
+              <input
+                type={type} id={id} name={id} value={formData[id]} onChange={handleChange} required
+                className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-zinc-600 text-sm focus:outline-none focus:border-emerald-500/50 focus:ring-1 focus:ring-emerald-500/30 transition-all"
+              />
+            </div>
+          ))}
+          <div>
+            <label className="text-xs font-semibold uppercase tracking-widest text-zinc-500 block mb-1.5">Message</label>
+            <textarea
+              id="message" name="message" value={formData.message} onChange={handleChange} required rows={4}
+              className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-zinc-600 text-sm focus:outline-none focus:border-emerald-500/50 focus:ring-1 focus:ring-emerald-500/30 transition-all resize-none"
+            />
+          </div>
+          <button
+            type="submit"
+            className="w-full bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-bold py-3 rounded-xl hover:shadow-lg hover:shadow-emerald-500/30 hover:-translate-y-0.5 transition-all duration-200 text-sm uppercase tracking-widest"
+          >
+            Send Message
+          </button>
+        </form>
+      )}
     </div>
   );
 };
@@ -282,31 +259,49 @@ const ContactForm = () => {
 export default ContactForm;`;
 
       case "card":
-        return `import React from 'react';
+        return `import React, { useState } from 'react';
 
-const Card = ({ 
-  title = "Welcome to Our Service", 
-  description = "Discover amazing features and capabilities that will transform your experience.",
-  imageUrl,
-  actions 
+const Card = ({
+  name = "Alex Rivera",
+  role = "Senior Product Designer",
+  bio = "Crafting digital experiences that feel inevitable. 5 years at the intersection of design and code.",
+  followers = "12.4k",
+  projects = 38,
+  likes = "2.1k",
 }) => {
+  const [following, setFollowing] = useState(false);
+
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden">
-      {imageUrl && (
-        <img 
-          src={imageUrl} 
-          alt={title}
-          className="w-full h-48 object-cover"
-        />
-      )}
-      <div className="p-6">
-        <h3 className="text-xl font-semibold mb-2">{title}</h3>
-        <p className="text-gray-600 mb-4">{description}</p>
-        {actions && (
-          <div className="mt-4">
-            {actions}
+    <div className="relative bg-slate-900 rounded-2xl overflow-hidden w-80 shadow-2xl shadow-violet-900/30 border border-white/10">
+      <div className="absolute inset-0 bg-gradient-to-br from-violet-900/40 via-transparent to-indigo-900/30 pointer-events-none" />
+      <div className="h-24 bg-gradient-to-r from-violet-600 to-indigo-500" />
+      <div className="px-6 pb-6">
+        <div className="-mt-10 mb-4 flex items-end justify-between">
+          <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-violet-400 to-indigo-600 flex items-center justify-center text-3xl font-black text-white shadow-lg ring-4 ring-slate-900">
+            {name.charAt(0)}
           </div>
-        )}
+          <button
+            onClick={() => setFollowing(f => !f)}
+            className={\`px-5 py-2 rounded-full text-sm font-semibold transition-all duration-200 \${
+              following
+                ? 'bg-white/10 text-white hover:bg-white/20'
+                : 'bg-gradient-to-r from-violet-500 to-indigo-500 text-white hover:shadow-lg hover:shadow-violet-500/40 hover:-translate-y-0.5'
+            }\`}
+          >
+            {following ? 'Following' : 'Follow'}
+          </button>
+        </div>
+        <h2 className="text-xl font-bold text-white tracking-tight">{name}</h2>
+        <p className="text-xs font-semibold uppercase tracking-widest text-violet-400 mt-0.5 mb-3">{role}</p>
+        <p className="text-sm text-slate-400 leading-relaxed mb-5">{bio}</p>
+        <div className="flex gap-6 pt-4 border-t border-white/10">
+          {[['Followers', followers], ['Projects', projects], ['Likes', likes]].map(([label, val]) => (
+            <div key={label}>
+              <p className="text-white font-bold text-lg">{val}</p>
+              <p className="text-xs text-slate-500 uppercase tracking-wide">{label}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -320,41 +315,28 @@ export default Card;`;
 const Counter = () => {
   const [count, setCount] = useState(0);
 
-  const increment = () => {
-    setCount(count + 1);
-  };
-
-  const decrement = () => {
-    setCount(count - 1);
-  };
-
-  const reset = () => {
-    setCount(0);
-  };
-
   return (
-    <div className="flex flex-col items-center p-6 bg-white rounded-lg shadow-md">
-      <h2 className="text-2xl font-bold mb-4">Counter</h2>
-      <div className="text-4xl font-bold mb-6">{count}</div>
-      <div className="flex gap-4">
-        <button 
-          onClick={decrement}
-          className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition-colors"
-        >
-          Decrease
-        </button>
-        <button 
-          onClick={reset}
-          className="px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-600 transition-colors"
-        >
-          Reset
-        </button>
-        <button 
-          onClick={increment}
-          className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 transition-colors"
-        >
-          Increase
-        </button>
+    <div className="relative flex flex-col items-center bg-slate-900 rounded-3xl p-10 shadow-2xl shadow-black/40 border border-white/10 overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-indigo-900/20 to-transparent pointer-events-none" />
+      <p className="text-xs font-bold uppercase tracking-widest text-indigo-400 mb-6">Counter</p>
+      <div className="relative mb-2">
+        <span className="text-8xl font-black text-white tabular-nums tracking-tighter">{count}</span>
+        <div className="absolute -inset-4 bg-indigo-500/10 rounded-full blur-2xl -z-10" />
+      </div>
+      <p className="text-zinc-600 text-xs uppercase tracking-widest mb-10">current value</p>
+      <div className="flex gap-3">
+        <button
+          onClick={() => setCount(c => c - 1)}
+          className="w-12 h-12 rounded-full bg-white/5 border border-white/10 text-white text-xl font-bold hover:bg-white/10 hover:-translate-y-0.5 transition-all duration-150"
+        >−</button>
+        <button
+          onClick={() => setCount(0)}
+          className="px-6 h-12 rounded-full bg-white/5 border border-white/10 text-zinc-500 text-xs font-semibold uppercase tracking-widest hover:bg-white/10 transition-all duration-150"
+        >Reset</button>
+        <button
+          onClick={() => setCount(c => c + 1)}
+          className="w-12 h-12 rounded-full bg-gradient-to-br from-indigo-500 to-violet-600 text-white text-xl font-bold hover:shadow-lg hover:shadow-indigo-500/40 hover:-translate-y-0.5 transition-all duration-150"
+        >+</button>
       </div>
     </div>
   );
@@ -367,22 +349,22 @@ export default Counter;`;
   private getOldStringForReplace(componentType: string): string {
     switch (componentType) {
       case "form":
-        return "    console.log('Form submitted:', formData);";
+        return "  const [sent, setSent] = useState(false);";
       case "card":
-        return '      <div className="p-6">';
+        return "  const [following, setFollowing] = useState(false);";
       default:
-        return "  const increment = () => setCount(count + 1);";
+        return "  const [count, setCount] = useState(0);";
     }
   }
 
   private getNewStringForReplace(componentType: string): string {
     switch (componentType) {
       case "form":
-        return "    console.log('Form submitted:', formData);\n    alert('Thank you! We\\'ll get back to you soon.');";
+        return "  const [sent, setSent] = useState(false);\n  const [loading, setLoading] = useState(false);";
       case "card":
-        return '      <div className="p-6 hover:bg-gray-50 transition-colors">';
+        return "  const [following, setFollowing] = useState(false);\n  const [hovered, setHovered] = useState(false);";
       default:
-        return "  const increment = () => setCount(prev => prev + 1);";
+        return "  const [count, setCount] = useState(0);\n  const [history, setHistory] = useState([0]);";
     }
   }
 
@@ -392,18 +374,8 @@ export default Counter;`;
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center p-8">
-      <div className="w-full max-w-md">
-        <Card 
-          title="Amazing Product"
-          description="This is a fantastic product that will change your life. Experience the difference today!"
-          actions={
-            <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors">
-              Learn More
-            </button>
-          }
-        />
-      </div>
+    <div className="min-h-screen bg-slate-950 flex items-center justify-center p-8">
+      <Card />
     </div>
   );
 }`;
@@ -413,10 +385,8 @@ export default function App() {
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center p-8">
-      <div className="w-full max-w-md">
-        <${componentName} />
-      </div>
+    <div className="min-h-screen bg-zinc-950 flex items-center justify-center p-8">
+      <${componentName} />
     </div>
   );
 }`;

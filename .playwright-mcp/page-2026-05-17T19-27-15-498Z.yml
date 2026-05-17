@@ -1,0 +1,179 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - generic [ref=e5]:
+      - heading "React Component Generator" [level=1] [ref=e7]
+      - generic [ref=e9]:
+        - generic [ref=e12]:
+          - generic [ref=e49]:
+            - generic [ref=e52]: Create a newsletter signup form with email input and a subscribe button
+            - img [ref=e55]
+          - generic [ref=e86]:
+            - img [ref=e89]
+            - generic [ref=e94]:
+              - paragraph [ref=e96]: This is a static response. You can place an Anthropic API key in the .env file to use the Anthropic API for component generation. Let me create an App.jsx file to display the component.
+              - generic [ref=e99]: Creating App.jsx
+              - separator [ref=e100]
+              - paragraph [ref=e102]: I'll create a ContactForm component for you.
+              - generic [ref=e105]: Creating ContactForm.jsx
+              - separator [ref=e106]
+              - paragraph [ref=e108]: Now let me enhance the component with better styling.
+              - generic [ref=e111]: Editing ContactForm.jsx
+              - separator [ref=e112]
+              - generic [ref=e113]:
+                - paragraph [ref=e114]: "Perfect! I've created:"
+                - list [ref=e115]:
+                  - listitem [ref=e116]:
+                    - strong [ref=e117]: ContactForm.jsx
+                    - text: "- A fully-featured form component"
+                  - listitem [ref=e118]:
+                    - strong [ref=e119]: App.jsx
+                    - text: "- The main app file that displays the component"
+                - paragraph [ref=e120]: The component is now ready to use. You can see the preview on the right side of the screen.
+        - generic [ref=e20]:
+          - textbox "Describe the React component you want to create..." [ref=e21]
+          - button [disabled] [ref=e22]:
+            - img [ref=e23]
+    - separator [ref=e26]
+    - generic [ref=e28]:
+      - generic [ref=e29]:
+        - tablist [ref=e31]:
+          - tab "Preview" [ref=e32]
+          - tab "Code" [selected] [ref=e33]
+        - generic [ref=e34]:
+          - button "Sign In" [ref=e35]
+          - button "Sign Up" [ref=e36]
+      - generic [ref=e121]:
+        - generic [ref=e127]:
+          - generic [ref=e128]:
+            - generic [ref=e129] [cursor=pointer]:
+              - img [ref=e130]
+              - img [ref=e132]
+              - generic [ref=e134]: components
+            - generic [ref=e137] [cursor=pointer]:
+              - img [ref=e138]
+              - generic [ref=e143]: ContactForm.jsx
+          - generic [ref=e145] [cursor=pointer]:
+            - img [ref=e146]
+            - generic [ref=e151]: App.jsx
+        - separator [ref=e152]
+        - code [ref=e157]:
+          - generic [ref=e158]:
+            - generic [ref=e160]:
+              - generic [ref=e243]: "1"
+              - generic [ref=e165]: "2"
+              - generic [ref=e244]:
+                - generic [ref=e245] [cursor=pointer]: 
+                - generic [ref=e246]: "3"
+              - generic [ref=e247]:
+                - generic [ref=e248] [cursor=pointer]: 
+                - generic [ref=e249]: "4"
+              - generic [ref=e251]: "5"
+              - generic [ref=e253]: "6"
+              - generic [ref=e179]: "7"
+              - generic [ref=e181]: "8"
+              - generic [ref=e183]: "9"
+              - generic [ref=e254]:
+                - generic [ref=e255] [cursor=pointer]: 
+                - generic [ref=e256]: "10"
+              - generic [ref=e257]:
+                - generic [ref=e258] [cursor=pointer]: 
+                - generic [ref=e259]: "11"
+              - generic [ref=e261]: "12"
+              - generic [ref=e263]: "13"
+              - generic [ref=e265]: "14"
+              - generic [ref=e267]: "15"
+              - generic [ref=e269]: "16"
+              - generic [ref=e270]:
+                - generic [ref=e271] [cursor=pointer]: 
+                - generic [ref=e272]: "17"
+              - generic [ref=e274]: "18"
+              - generic [ref=e276]: "19"
+              - generic [ref=e278]: "20"
+              - generic [ref=e280]: "21"
+              - generic [ref=e282]: "22"
+              - generic [ref=e284]: "23"
+              - generic [ref=e285]:
+                - generic [ref=e286] [cursor=pointer]: 
+                - generic [ref=e287]: "24"
+              - generic [ref=e288]:
+                - generic [ref=e289] [cursor=pointer]: 
+                - generic [ref=e290]: "25"
+              - generic [ref=e292]: "26"
+              - generic [ref=e293]:
+                - generic [ref=e294] [cursor=pointer]: 
+                - generic [ref=e295]: "27"
+              - generic [ref=e296]:
+                - generic [ref=e297] [cursor=pointer]: 
+                - generic [ref=e298]: "28"
+              - generic [ref=e299]:
+                - generic [ref=e300] [cursor=pointer]: 
+                - generic [ref=e301]: "29"
+              - generic [ref=e303]: "30"
+              - generic [ref=e305]: "31"
+              - generic [ref=e306]:
+                - generic [ref=e307] [cursor=pointer]: 
+                - generic [ref=e308]: "32"
+              - generic [ref=e310]: "33"
+              - generic [ref=e312]: "34"
+              - generic [ref=e314]: "35"
+              - generic [ref=e316]: "36"
+              - generic [ref=e318]: "37"
+              - generic [ref=e320]: "38"
+              - generic [ref=e322]: "39"
+              - generic [ref=e325]: "40"
+              - generic [ref=e327]: "41"
+              - generic [ref=e329]: "42"
+              - generic [ref=e330]:
+                - generic [ref=e331] [cursor=pointer]: 
+                - generic [ref=e332]: "43"
+              - generic [ref=e333]:
+                - generic [ref=e334] [cursor=pointer]: 
+                - generic [ref=e335]: "44"
+              - generic [ref=e337]: "45"
+            - generic [ref=e217]:
+              - generic [ref=e519]: "import React, { useState } from 'react';"
+              - generic [ref=e521]: "const ContactForm = () => {"
+              - generic [ref=e523]: "const [formData, setFormData] = useState({"
+              - generic [ref=e525]: "name: '',"
+              - generic [ref=e527]: "email: '',"
+              - generic [ref=e529]: "message: ''"
+              - generic [ref=e531]: "});"
+              - generic [ref=e534]: "const handleChange = (e) => {"
+              - generic [ref=e536]: "setFormData({"
+              - generic [ref=e538]: ...formData,
+              - generic [ref=e540]: "[e.target.name]: e.target.value"
+              - generic [ref=e542]: "});"
+              - generic [ref=e544]: "};"
+              - generic [ref=e547]: "const handleSubmit = (e) => {"
+              - generic [ref=e549]: e.preventDefault();
+              - generic [ref=e551]: console.log('Form submitted:', formData);
+              - generic [ref=e553]: alert('Thank you! We\'ll get back to you soon.');
+              - generic [ref=e555]: // Handle form submission here
+              - generic [ref=e557]: "};"
+              - generic [ref=e560]: return (
+              - generic [ref=e562]: <div className="max-w-md mx-auto p-6 bg-white rounded-lg shadow-md">
+              - generic [ref=e564]: <h2 className="text-2xl font-bold mb-6">Contact Us</h2>
+              - generic [ref=e566]: "<form onSubmit={handleSubmit} className=\"space-y-4\">"
+              - generic [ref=e568]: <div>
+              - generic [ref=e570]: <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+              - generic [ref=e572]: Name
+              - generic [ref=e574]: </label>
+              - generic [ref=e576]: <input
+              - generic [ref=e578]: type="text"
+              - generic [ref=e580]: id="name"
+              - generic [ref=e582]: name="name"
+              - generic [ref=e584]: "value={formData.name}"
+              - generic [ref=e586]: "onChange={handleChange}"
+              - generic [ref=e588]: required
+              - generic [ref=e590]: className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none
+              - generic [ref=e592]: focus:ring-2 focus:ring-blue-500"
+              - generic [ref=e594]: />
+              - generic [ref=e596]: </div>
+              - generic [ref=e600]: <div>
+              - generic [ref=e602]: <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+              - generic [ref=e604]: Email
+            - textbox "Editor content" [ref=e240]: "Send Message </button> </form> </div> ); }; export default ContactForm;"
+  - alert [ref=e48]
+  - generic [ref=e241]:
+    - alert
+    - alert

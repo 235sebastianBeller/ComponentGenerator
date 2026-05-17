@@ -1,0 +1,59 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - generic [ref=e5]:
+      - heading "React Component Generator" [level=1] [ref=e7]
+      - generic [ref=e9]:
+        - generic [ref=e12]:
+          - generic [ref=e49]:
+            - generic [ref=e52]: Create a newsletter signup form with email input and a subscribe button
+            - img [ref=e55]
+          - generic [ref=e86]:
+            - img [ref=e89]
+            - generic [ref=e94]:
+              - paragraph [ref=e96]: This is a static response. You can place an Anthropic API key in the .env file to use the Anthropic API for component generation. Let me create an App.jsx file to display the component.
+              - generic [ref=e99]: Creating App.jsx
+              - separator [ref=e100]
+              - paragraph [ref=e102]: I'll create a ContactForm component for you.
+              - generic [ref=e105]: Creating ContactForm.jsx
+              - separator [ref=e106]
+              - paragraph [ref=e108]: Now let me enhance the component with better styling.
+              - generic [ref=e111]: Editing ContactForm.jsx
+              - separator [ref=e112]
+              - generic [ref=e113]:
+                - paragraph [ref=e114]: "Perfect! I've created:"
+                - list [ref=e115]:
+                  - listitem [ref=e116]:
+                    - strong [ref=e117]: ContactForm.jsx
+                    - text: "- A fully-featured form component"
+                  - listitem [ref=e118]:
+                    - strong [ref=e119]: App.jsx
+                    - text: "- The main app file that displays the component"
+                - paragraph [ref=e120]: The component is now ready to use. You can see the preview on the right side of the screen.
+        - generic [ref=e20]:
+          - textbox "Describe the React component you want to create..." [ref=e21]
+          - button [disabled] [ref=e22]:
+            - img [ref=e23]
+    - separator [ref=e26]
+    - generic [ref=e28]:
+      - generic [ref=e29]:
+        - tablist [ref=e31]:
+          - tab "Preview" [selected] [ref=e32]
+          - tab "Code" [ref=e33]
+        - generic [ref=e34]:
+          - button "Sign In" [ref=e35]
+          - button "Sign Up" [ref=e36]
+      - iframe [ref=e85]:
+        - generic [ref=f6e5]:
+          - heading "Contact Us" [level=2] [ref=f6e6]
+          - generic [ref=f6e7]:
+            - generic [ref=f6e8]:
+              - generic [ref=f6e9]: Name
+              - textbox "Name" [ref=f6e10]
+            - generic [ref=f6e11]:
+              - generic [ref=f6e12]: Email
+              - textbox "Email" [ref=f6e13]
+            - generic [ref=f6e14]:
+              - generic [ref=f6e15]: Message
+              - textbox "Message" [ref=f6e16]
+            - button "Send Message" [ref=f6e17] [cursor=pointer]
+  - alert [ref=e48]

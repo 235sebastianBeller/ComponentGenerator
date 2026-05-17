@@ -1,0 +1,96 @@
+- generic [ref=e1]:
+  - generic [ref=e3]:
+    - generic [ref=e5]:
+      - heading "React Component Generator" [level=1] [ref=e7]
+      - generic [ref=e9]:
+        - generic [ref=e12]:
+          - generic [ref=e49]:
+            - generic [ref=e52]: Create a newsletter signup form with email input and a subscribe button
+            - img [ref=e55]
+          - generic [ref=e86]:
+            - img [ref=e89]
+            - generic [ref=e94]:
+              - paragraph [ref=e96]: This is a static response. You can place an Anthropic API key in the .env file to use the Anthropic API for component generation. Let me create an App.jsx file to display the component.
+              - generic [ref=e99]: Creating App.jsx
+              - separator [ref=e100]
+              - paragraph [ref=e102]: I'll create a ContactForm component for you.
+              - generic [ref=e105]: Creating ContactForm.jsx
+              - separator [ref=e106]
+              - paragraph [ref=e108]: Now let me enhance the component with better styling.
+              - generic [ref=e111]: Editing ContactForm.jsx
+              - separator [ref=e112]
+              - generic [ref=e113]:
+                - paragraph [ref=e114]: "Perfect! I've created:"
+                - list [ref=e115]:
+                  - listitem [ref=e116]:
+                    - strong [ref=e117]: ContactForm.jsx
+                    - text: "- A fully-featured form component"
+                  - listitem [ref=e118]:
+                    - strong [ref=e119]: App.jsx
+                    - text: "- The main app file that displays the component"
+                - paragraph [ref=e120]: The component is now ready to use. You can see the preview on the right side of the screen.
+        - generic [ref=e20]:
+          - textbox "Describe the React component you want to create..." [ref=e21]
+          - button [disabled] [ref=e22]:
+            - img [ref=e23]
+    - separator [ref=e26]
+    - generic [ref=e28]:
+      - generic [ref=e29]:
+        - tablist [ref=e31]:
+          - tab "Preview" [ref=e32]
+          - tab "Code" [active] [selected] [ref=e33]
+        - generic [ref=e34]:
+          - button "Sign In" [ref=e35]
+          - button "Sign Up" [ref=e36]
+      - generic [ref=e121]:
+        - generic [ref=e127]:
+          - generic [ref=e128]:
+            - generic [ref=e129] [cursor=pointer]:
+              - img [ref=e130]
+              - img [ref=e132]
+              - generic [ref=e134]: components
+            - generic [ref=e137] [cursor=pointer]:
+              - img [ref=e138]
+              - generic [ref=e143]: ContactForm.jsx
+          - generic [ref=e145] [cursor=pointer]:
+            - img [ref=e146]
+            - generic [ref=e151]: App.jsx
+        - separator [ref=e152]
+        - code [ref=e157]:
+          - generic [ref=e158]:
+            - generic [ref=e160]:
+              - generic [ref=e163]: "1"
+              - generic [ref=e165]: "2"
+              - generic [ref=e166]:
+                - generic [ref=e167] [cursor=pointer]: 
+                - generic [ref=e168]: "3"
+              - generic [ref=e169]:
+                - generic [ref=e170] [cursor=pointer]: 
+                - generic [ref=e171]: "4"
+              - generic [ref=e172]:
+                - generic [ref=e173] [cursor=pointer]: 
+                - generic [ref=e174]: "5"
+              - generic [ref=e175]:
+                - generic [ref=e176] [cursor=pointer]: 
+                - generic [ref=e177]: "6"
+              - generic [ref=e179]: "7"
+              - generic [ref=e181]: "8"
+              - generic [ref=e183]: "9"
+              - generic [ref=e185]: "10"
+              - generic [ref=e187]: "11"
+            - generic [ref=e217]:
+              - generic [ref=e219]: import ContactForm from '@/components/ContactForm';
+              - generic [ref=e222]: "export default function App() {"
+              - generic [ref=e224]: return (
+              - generic [ref=e226]: <div className="min-h-screen bg-gray-100 flex items-center justify-center p-8">
+              - generic [ref=e228]: <div className="w-full max-w-md">
+              - generic [ref=e230]: <ContactForm />
+              - generic [ref=e232]: </div>
+              - generic [ref=e234]: </div>
+              - generic [ref=e236]: );
+              - generic [ref=e238]: "}"
+            - textbox "Editor content" [ref=e240]
+  - alert [ref=e48]
+  - generic [ref=e241]:
+    - alert
+    - alert
